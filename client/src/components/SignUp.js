@@ -18,10 +18,11 @@ function SignUp(props) {
     }
 
     const submit = () => {
-        navigate('/')
+        navigate('/home',{state: {Email: email}});
     }
 
     return (
+
         <div className={login.main}>
                 <div className={login.login}>
                     <div className={login.first}>

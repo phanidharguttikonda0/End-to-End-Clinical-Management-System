@@ -1,8 +1,8 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import login from './Login.module.css';
 
-export const EmailContext = createContext();
+
 
 function Login(props) {
     const [email, setEmail] = useState('');
@@ -10,9 +10,10 @@ function Login(props) {
     const navigate = useNavigate();
 
     const submit = () => {
+        navigate('/home',{state: {Email: email}});
         if (email === 'phani' && password === 'k') {
             console.log('Yes got it')
-            navigate('/home');
+           
         } else {
             alert('Incorrect details');
         }
@@ -27,7 +28,6 @@ function Login(props) {
     };
 
     return (
-        <EmailContext.Provider value={email}>
             <div className={login.main}>
                 <div className={login.login}>
                     <div className={login.first}>
@@ -53,7 +53,6 @@ function Login(props) {
                     </div>
                 </div>
             </div>
-        </EmailContext.Provider>
     );
 }
 

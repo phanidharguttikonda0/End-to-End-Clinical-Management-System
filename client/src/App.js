@@ -7,7 +7,8 @@ import SignUp from './components/SignUp';
 
 function App() {
   return (
-    <Router>
+
+        <Router>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/forgot-credentials" element={<Forget />} />
@@ -15,6 +16,8 @@ function App() {
         <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
+
+
   );
 }
 
