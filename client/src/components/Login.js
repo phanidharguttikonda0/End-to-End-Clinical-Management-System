@@ -1,7 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import login from './Login.module.css';
-
 
 
 function Login(props) {
@@ -9,11 +9,18 @@ function Login(props) {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const submit = () => {
-        navigate('/home',{state: {Email: email}});
-        if (email === 'phani' && password === 'k') {
-            console.log('Yes got it')
-           
+    const submit = async () => {
+        const person = check(email) ;
+        let url = 'http://localhost:3001/patient-check'
+        if (person === 1) {
+            url = 'http://localhost:3001/doctor-check' ;
+        }
+        console.log('Started') ;
+        console.log((await axios.get('http://localhost:3001/')).data)
+        const value = await axios.post(url, {email:email,password: password}) ;
+
+        if (value.data) {
+            navigate('/home',{state: {Email: email, person:person }});
         } else {
             alert('Incorrect details');
         }
@@ -57,3 +64,15 @@ function Login(props) {
 }
 
 export default Login;
+
+
+function check(mail){
+    //* here we are going to check whether he is doctor or patient or staff
+    if (mail.includes('@kannaya.doctor')) {
+        console.log('doctor')
+        return 1 ;
+    }else{
+        console.log('patient')
+        return 0 ;
+    }
+}
