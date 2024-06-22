@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const {patientCheck} = require('../Controllers/patient') ;
+const {Settings} = require('../Controllers/patient') ;
 
-router.post('/', patientCheck) ;
+
+router.get('/', Settings) ;
+
 
 module.exports = router ;

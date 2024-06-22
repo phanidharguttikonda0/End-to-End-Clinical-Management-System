@@ -2,8 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
-const {doctorCheck} = require('./Controllers/doctor') ;
-const {patientCheck} = require('./Controllers/patient') ;
+const {doctorCheck,applyLeave} = require('./Controllers/doctor') ;
+const {patientCheck,SignUp} = require('./Controllers/patient') ;
+const doctorHome = require('./Routes/doctorhome') ;
+const patientHome = require('./Routes/patienthome') ;
+const patientRecent = require('./Routes/patientRecent') ;
+const patientSettings = require('./Routes/patientSettings') ;
+const prevOP = require('./Routes/doctorprevop') ;
+const info = require('./Routes/doctorInfo') ;
 // Middleware
 // Allow requests from http://localhost:3000 (your front-end URL)
 app.use(cors({
@@ -23,6 +29,24 @@ app.get('/', (req, res) => {
 app.post('/patient-check',patientCheck) ;
 
 app.post('/doctor-check',doctorCheck) ;
+
+app.post('/Sign-Up',SignUp) ;
+
+//* we are going to pass there gmail as the query
+
+app.use('/doctor-home',doctorHome) ;
+
+app.use('/patient-home',patientHome) ; //* list of doctors and there specilization along with name and experiance
+
+app.use('/patient-recentappointments',patientRecent) ;
+
+app.use('/patient-Settings', patientSettings) ;
+
+app.use('/doctor-prevop', prevOP) ;
+
+app.use('/info', info) ;
+
+app.post('/doctor-apply-forleave', applyLeave) ;
 
 // Error handling middleware
 app.use((err, req, res, next) => {

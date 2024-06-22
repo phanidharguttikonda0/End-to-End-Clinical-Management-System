@@ -26,4 +26,28 @@ const doctorCheck = async (req,res) => {
 }
 
 
-module.exports = {doctorCheck} ;
+const doctorHome = async (req,res) => {}
+
+
+const getpatient = async (req,res) => {}
+
+const writeReports = async (req,res) => {}
+
+const writeMedicines = async (req,res) => {}
+
+
+const prevPatients = async (req,res) => {}
+
+const prevPatientReports = async (req,res) => {}
+
+const prevpatientMedicine = async (req,res) => {}
+
+const applyLeave = async (req,res) => {}
+
+const Info = async (req,res) => {}
+
+const prevLeaves = async (req,res) => {}
+
+module.exports = {doctorCheck,doctorHome,getpatient,writeReports,writeMedicines,
+    prevPatients,prevPatientReports,prevpatientMedicine,applyLeave,Info,prevLeaves
+} ;
