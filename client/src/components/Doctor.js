@@ -1,23 +1,36 @@
-import React, { useContext } from 'react';
-import { EmailContext } from './Home';
-import home from './Home.module.css';
-import image from './logo.png';
+import React from 'react';
+
+import { Outlet, useNavigate } from 'react-router-dom';
+import css from './doctor.module.css';
 
 function Doctor(props) {
-    const email = useContext(EmailContext) ;
+
+    const navigate = useNavigate() ;
+
+    const homeClick = () => navigate('/doctor-home')
+
+    const labClick = () => navigate('lab-reports')
+
+    const manageClick = () => navigate('manage-appointments')
+
+    const infoClick = () => navigate('doctor-info')
+
     return (
-            <div className={home.main}>
+            <div className={css.main}>
             <nav>
-                <img src={image} alt='reload' />
-                <div className={home.list}>
-                    <div className={home.menu}> Patients </div>
-                    <div className={home.menu}> Lab-Reports </div>
-                    <div className={home.menu}> Manage-Appointments</div>
-                    <div className={home.menu}> Info </div>
+                <div className={css.logo}>
+                    <h2> Kannaya Clinics</h2>
+                    <h5> Where Care Meets Compassion</h5>
+                </div>
+                <div className={css.menu}>
+                    <div onClick={homeClick}> Home </div>
+                    <div onClick={labClick}> Lab-Reports </div>
+                    <div onClick={manageClick}> Manage-Appointments</div>
+                    <div onClick={infoClick}> Info </div>
                 </div>
             </nav>
-            <div className={home.body}>
-                {email}
+            <div className={css.body}>
+                <Outlet />
             </div>
         </div>
     );

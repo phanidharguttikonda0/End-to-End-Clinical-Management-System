@@ -20,7 +20,8 @@ function Login(props) {
         const value = await axios.post(url, {email:email,password: password}) ;
 
         if (value.data) {
-            navigate('/home',{state: {Email: email, person:person }});
+            if (person === 1) navigate('/doctor-home')
+            else navigate('/patient-home')
         } else {
             alert('Incorrect details');
         }
