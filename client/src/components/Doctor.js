@@ -1,19 +1,22 @@
 import React from 'react';
 
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import css from './doctor.module.css';
 
 function Doctor(props) {
 
+    const location = useLocation() ;
+    const {gmail} = location.state ;
+
     const navigate = useNavigate() ;
 
-    const homeClick = () => navigate('/doctor-home')
+    const homeClick = () => navigate('/doctor-home', {state : {gmail: gmail}})
 
-    const labClick = () => navigate('lab-reports')
+    const labClick = () => navigate('lab-reports', {state : {gmail: gmail}})
 
-    const manageClick = () => navigate('manage-appointments')
+    const manageClick = () => navigate('manage-appointments', {state : {gmail: gmail}})
 
-    const infoClick = () => navigate('doctor-info')
+    const infoClick = () => navigate('doctor-info', {state : {gmail: gmail}})
 
     return (
             <div className={css.main}>

@@ -8,6 +8,10 @@
     font-weight: bold;
 }
 
+nav {
+    border-bottom: 1px solid gray;
+}
+
 .menu{
     width: 45%;
     display: flex;

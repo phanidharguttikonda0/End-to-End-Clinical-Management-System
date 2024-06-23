@@ -7,7 +7,7 @@ const pool = new Pool({
     database: 'kannayaclinics',   //* database name
     password: 'Phani@9090K',   //* password
     port: 5432,                 //* PostgreSQL port
-  });
+  }); 
 
 let gmail = '' ;
 

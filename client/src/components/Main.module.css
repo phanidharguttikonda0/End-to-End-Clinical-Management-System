@@ -1,5 +1,5 @@
 .main {
-    background-color: #FF5733;
+    background-color: #00224D;
     width: 100%;
     height: 100vh;
     color: white;
@@ -14,6 +14,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid gray;
 }
 
 .menu{
@@ -39,7 +40,7 @@ h5{
 
 .logo:hover{
     display: inline-block;
-    color: #FF5733;
+    color: #00224D;
     background-color: white;
     border-radius: 3px;
     margin-left: 12px;
@@ -54,5 +55,5 @@ h5{
     border-color: white;
     border-width: 2px;
     border-style: solid;
-    color: rgba(255, 87, 51, 1);
+    color: #00224D;
 }

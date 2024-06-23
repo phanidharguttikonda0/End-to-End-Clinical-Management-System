@@ -1,4 +1,5 @@
 //const pool  = require('../server.js')
+const { query } = require('express');
 const { Pool } = require('pg');
 //* giftbox.pool, giftbox.app
 
@@ -19,7 +20,7 @@ const patientCheck = async (req,res) => {
     console.log('This is working')
     gmail = email ;
     //* we need to check whether the email and password or correct or not
-    const result = await pool.query('select * from patient where gmail=$1 and password=$2',[gmail,password]) ;
+    const result = await pool.query('select * from patient where EMAIL=$1 and password=$2',[gmail,password]) ;
     if(result.rows.length == 0) {
         console.log(`hey he is not a patient with gmail ${gmail}`)
         res.send(false) ;
@@ -52,7 +53,31 @@ const SignUp = async (req,res) => {
 }
 
 
-const patientHome = async (req,res) => {}
+const patientHome = async (req,res) => {
+    //* we are going to return the list of doctors that are not on the Leave
+    const currentDate = new Date().toISOString().split('T')[0];
+    console.log('the current date was ',currentDate)
+    const query = `
+    SELECT d.*
+    FROM Doctor AS d
+    LEFT JOIN Leave AS l ON l.Doctor_id = d.Doctor_id 
+        AND $1 BETWEEN l.start_date AND l.end_date
+    LEFT JOIN (
+        SELECT a.Doctor_id, COUNT(*) as appointment_count
+        FROM Appointment AS a
+        WHERE a.appointment_date = $1
+        GROUP BY a.Doctor_id
+    ) AS ap ON ap.Doctor_id = d.Doctor_id
+    WHERE l.Doctor_id IS NULL
+      AND (ap.appointment_count IS NULL OR d.doctor_limit > ap.appointment_count);
+  `;
+
+  const result = await pool.query(query, [currentDate]);
+
+    console.log(`The list of doctors were ${result.rows}`)
+
+    res.send(result.rows) ; //* sending list of doctors
+}
 
 
 const appointment = async (req,res) => {}

@@ -1,21 +1,23 @@
 import React from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import css from './Main.module.css';
 
 function Patient(props) {
 
+    const location = useLocation() ;
+    const {gmail} = location.state ;
     const navigate = useNavigate();
 
     const homeClick = () => {
-        navigate('/patient-home');
+        navigate('/patient-home', {state : {gmail: gmail}});
       }
     
       const recentClick = () => {
-        navigate('/patient-home/recent-ops');
+        navigate('/patient-home/recent-ops', {state : {gmail: gmail}});
       }
     
       const settingsClick = () => {
-        navigate('/patient-home/Settings');
+        navigate('/patient-home/Settings', {state : {gmail: gmail}});
       }
 
     return (

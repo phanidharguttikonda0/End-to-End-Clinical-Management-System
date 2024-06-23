@@ -3,14 +3,14 @@
     align-items: center;
     height: 100vh;
     justify-content: center;
-    background-color: #B5C18E;
+    background-color: #00033e;
     width: 100%;
     flex-direction: column;
 }
 
 .login{
     width: 25%;
-    background-color: #EADBC8;
+    background-color: #ffffff;
     padding: 1%;
     border-radius: 4px;
 }
@@ -34,7 +34,7 @@ input {
  font-size: medium;
  border: transparent;
  border-radius: 3px;
- outline-color: gray;
+ outline-color: gray;   
 }
 
 .mid button {

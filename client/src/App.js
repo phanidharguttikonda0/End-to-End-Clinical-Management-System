@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import BookOP from './components/BookOP';
 import Doctor from './components/Doctor';
 import Doctorreports from './components/Doctorreports';
 import Forget from './components/Forget';
@@ -25,6 +26,7 @@ function App() {
           <Route path='' element={<Patienthome />} />
           <Route path='recent-ops' element={<RecentOP />} />
           <Route path='Settings' element={<Settings/>} />
+          <Route path='book-op' element={<BookOP />} />
         </Route>
         <Route path='/doctor-home' element={<Doctor />} >
           <Route path='' element={<Doctorhome />} />

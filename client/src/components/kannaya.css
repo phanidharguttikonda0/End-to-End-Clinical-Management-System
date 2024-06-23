@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  overflow: hidden; /* Ensure content within container doesn't overflow */
+  position: relative; /* Required for absolute positioning of sections */
+  height: 400px; /* Set a fixed height to maintain consistency */
+}
+
+.section {
+  position: absolute; /* Position sections absolutely within container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Occupy full width of container */
+  padding-bottom: 20px; /* Add some spacing between sections */
+  opacity: 0; /* Initially hide all sections */
+  transition: opacity 1s ease-in-out; /* Smooth transition for opacity change */
+}
+
+.section.active {
+  opacity: 1; /* Display active section */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
