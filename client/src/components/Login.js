@@ -38,6 +38,10 @@ function Login(props) {
     return (
             <div className={login.main}>
                 <div className={login.login}>
+                    <div className={login.logo}>
+                    <h2> Kannaya Clinics</h2>
+                    <h5> Where Care Meets Compassion</h5>
+                    </div>
                     <div className={login.first}>
                         <input
                             type="email"

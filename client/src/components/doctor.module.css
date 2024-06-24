@@ -1,15 +1,21 @@
 .main {
-    background-color: #FF5733;
+    background-image: url('./back.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     color: white;
     font-family: "Brush Script MT", cursive;
     font-variant: small-caps;
     font-weight: bold;
+    
 }
 
 nav {
     border-bottom: 1px solid gray;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .menu{
@@ -36,8 +42,8 @@ h5{
 
 .logo:hover{
     display: inline-block;
-    color: #FF5733;
-    background-color: white;
+    color: rgba(0, 34, 77,0.5);
+    background-color: rgba(255, 255, 255, 0.5); ;
     border-radius: 7px;
     margin-left: 5px;
     margin-top: 3px;
@@ -47,10 +53,10 @@ h5{
 
 .menu div:hover {
     padding: 7px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 3px;
-    border-color: white;
+    border-color: rgba(255, 255, 255, 0.5);
     border-width: 2px;
     border-style: solid;
-    color: rgba(255, 87, 51, 1);
+    color: rgba(0, 34, 77,0.5);
 }

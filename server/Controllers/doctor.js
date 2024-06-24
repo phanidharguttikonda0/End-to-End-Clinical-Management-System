@@ -15,7 +15,7 @@ const doctorCheck = async (req,res) => {
     const {email, password} = req.body;
     gmail = email ;
     //* we need to check whether the email and password or correct or not
-    const result = await pool.query('select * from doctor where gmail=$1 and password=$2',[gmail,password]) ;
+    const result = await pool.query('select * from doctor where email=$1 and password=$2',[gmail,password]) ;
     if(result.rows.length == 0) {
         console.log(`hey he is not a doctor with gmail ${gmail}`)
         res.send(false) ;
