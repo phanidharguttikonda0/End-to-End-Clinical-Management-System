@@ -6,9 +6,11 @@ import Doctorreports from './components/Doctorreports';
 import Forget from './components/Forget';
 import Info from './components/Info';
 import Login from './components/Login';
+import MedicineBillView from './components/MedicineBillView';
 import Patient from './components/Patient';
+import Settings from './components/Profile';
+import RecentAppointment from './components/RecentAppointment';
 import RecentOP from './components/RecentOp';
-import Settings from './components/Settings';
 import SignUp from './components/SignUp';
 import Doctorhome from './components/doctorHome';
 import DoctorManageAppointments from './components/doctorManageAppointments';
@@ -24,7 +26,11 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path='/patient-home' element={<Patient />} >
           <Route path='' element={<Patienthome />} />
-          <Route path='recent-ops' element={<RecentOP />} />
+          <Route path='recent-ops' element={<RecentOP />} >
+            
+          </Route>
+          <Route path='recent-ops/appointment/' element={<RecentAppointment/>} />
+          <Route path='recent-ops/appointment/prescription' element={<MedicineBillView />} />
           <Route path='Settings' element={<Settings/>} />
           <Route path='book-op' element={<BookOP />} />
         </Route>

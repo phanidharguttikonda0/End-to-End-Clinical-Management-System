@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const {recentAppointments,MedicineBill,MedicinceBillPay} = require('../Controllers/patient') ;
+const {getRecentAppointments,recentAppointments,MedicineBill,MedicinceBillPay} = require('../Controllers/patient') ;
 
 
 router.get('/',recentAppointments) ;
 
+router.get('/appointment', getRecentAppointments) ;
+
 router.get('/medicinebill', MedicineBill) ;
 
-router.post('/medicinebill/pay', MedicinceBillPay) ;
+router.get('/medicinebill/pay', MedicinceBillPay) ;
 
 
 module.exports = router ;

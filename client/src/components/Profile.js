@@ -3,7 +3,7 @@ import React from 'react';
 function Settings(props) {
     return (
         <div>
-            welcome to Settings
+            welcome to Profile
         </div>
     );
 }

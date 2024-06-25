@@ -1,0 +1,17 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    background-color: rgba(128, 128, 128,0.5);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    overflow-y: scroll;
+    border-radius: 7px;
+    padding: 18px;
+}
+
+.main::-webkit-scrollbar{
+    width: 0px;
+}

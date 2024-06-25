@@ -1,0 +1,29 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    background-color: rgba(128, 128, 128,0.5);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    overflow-y: scroll;
+    border-radius: 7px;
+}
+
+.main::-webkit-scrollbar{
+    width: 0px;
+}
+
+.op{
+    background-color: rgb(128, 128, 128,0.7);
+    margin: 8px;
+    padding: 7px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.op:hover{
+    background-color: white;
+    color: black;
+}

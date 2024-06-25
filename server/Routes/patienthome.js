@@ -4,9 +4,9 @@ const {patientHome,appointment,appointmentConfirm} = require('../Controllers/pat
 
 router.get('/', patientHome) ; //* returns the list of doctors
 
-router.get('/appointment', appointment) ; //* opens up the doctor details
+router.post('/appointment/', appointment) ; //* cannot book 2 appointments in a day
 
-router.post('/appointment/confirm', appointmentConfirm) ; //* confirming the appointment
+router.post('/appointment/confirm/', appointmentConfirm) ; //* confirming the appointment
 
 
 module.exports = router ;

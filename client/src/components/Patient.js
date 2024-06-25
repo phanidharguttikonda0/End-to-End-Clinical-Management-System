@@ -30,7 +30,7 @@ function Patient(props) {
                 <div className={css.menu}>
                     <div onClick={homeClick}> Home </div>
                     <div onClick={recentClick}> recent-op's </div>
-                    <div onClick={settingsClick}> settings </div>
+                    <div onClick={settingsClick}> Profile </div>
                 </div>
             </nav>
             <div className={css.body}>
