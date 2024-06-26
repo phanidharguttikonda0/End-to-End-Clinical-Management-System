@@ -91,3 +91,17 @@ h5{
     cursor: pointer;
     color: rgb(76, 76, 76);
 }
+
+select {
+    margin-bottom: 12px;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 7px;
+    border: 0px;
+}
+
+textarea {
+    background-color: transparent;
+    color: #333;
+}

@@ -12,7 +12,7 @@ function Doctor(props) {
 
     const homeClick = () => navigate('/doctor-home', {state : {gmail: gmail}})
 
-    const labClick = () => navigate('lab-reports', {state : {gmail: gmail}})
+    const labClick = () => navigate('apply-for-leave', {state : {gmail: gmail}})
 
     const manageClick = () => navigate('manage-appointments', {state : {gmail: gmail}})
 
@@ -27,7 +27,7 @@ function Doctor(props) {
                 </div>
                 <div className={css.menu}>
                     <div onClick={homeClick}> Home </div>
-                    <div onClick={labClick}> Lab-Reports </div>
+                    <div onClick={labClick}> Apply Leave </div>
                     <div onClick={manageClick}> Manage-Appointments</div>
                     <div onClick={infoClick}> Info </div>
                 </div>

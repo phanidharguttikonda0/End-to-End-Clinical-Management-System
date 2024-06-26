@@ -1,14 +1,15 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import ApplyLeave from './components/ApplyLeave';
 import BookOP from './components/BookOP';
 import Doctor from './components/Doctor';
-import Doctorreports from './components/Doctorreports';
 import Forget from './components/Forget';
 import Info from './components/Info';
 import Login from './components/Login';
 import MedicineBillView from './components/MedicineBillView';
+import Ops from './components/Ops';
 import Patient from './components/Patient';
-import Settings from './components/Profile';
+import Profile from './components/Profile';
 import RecentAppointment from './components/RecentAppointment';
 import RecentOP from './components/RecentOp';
 import SignUp from './components/SignUp';
@@ -31,13 +32,14 @@ function App() {
           </Route>
           <Route path='recent-ops/appointment/' element={<RecentAppointment/>} />
           <Route path='recent-ops/appointment/prescription' element={<MedicineBillView />} />
-          <Route path='Settings' element={<Settings/>} />
+          <Route path='Profile' element={<Profile/>} />
           <Route path='book-op' element={<BookOP />} />
         </Route>
         <Route path='/doctor-home' element={<Doctor />} >
           <Route path='' element={<Doctorhome />} />
-          <Route path='lab-reports' element={<Doctorreports/>} />
+          <Route path='apply-for-leave' element={<ApplyLeave/>} />
           <Route path='manage-appointments' element={<DoctorManageAppointments />} />
+          <Route path='ops' element={<Ops />} />
           <Route path='doctor-info' element={<Info />} />
         </Route>
       </Routes>

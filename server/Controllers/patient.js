@@ -37,13 +37,13 @@ const SignUp = async (req,res) => {
 
     gmail = details.email ;
 
-    const result = await pool.query('select * from patient where gmail=$1',[gmail]) ;
+    const result = await pool.query('select * from patient where email=$1',[gmail]) ;
 
     if (result.rows.length === 0) {
         //* then we are going to insert these
         await pool.query(
-            'INSERT INTO patient (gmail, password, name, dob, mob, sex, bloodgroup, address) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
-            [details.gmail, details.password, details.name, details.dob, details.mob, details.sex, details.bloodgroup, details.address]
+            'INSERT INTO patient (email, password, name, dob, mobile_no, sex, blood_group, address) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+            [details.email, details.password, details.name, details.dob, details.mob, details.sex, details.bloodgroup, details.address]
         );
         res.send(true) ;
     }else{
@@ -149,7 +149,11 @@ const MedicinceBillPay = async (req,res) => {
 }
 
 
-const Settings = async(req,res) => {}
+const Settings = async(req,res) => {
+    const {gmail} = req.query ;
+    const result = await pool.query('select * from patient where email=$1',[gmail]) ;
+    res.send(result.rows[0]) ;
+}
 
 module.exports = {
     patientCheck,

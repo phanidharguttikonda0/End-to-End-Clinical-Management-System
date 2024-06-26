@@ -17,7 +17,7 @@ function Patient(props) {
       }
     
       const settingsClick = () => {
-        navigate('/patient-home/Settings', {state : {gmail: gmail}});
+        navigate('/patient-home/Profile', {state : {gmail: gmail}});
       }
 
     return (

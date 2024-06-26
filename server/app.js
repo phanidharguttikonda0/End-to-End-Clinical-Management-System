@@ -40,7 +40,7 @@ app.use('/patient-home',patientHome) ; //* list of doctors and there specilizati
 
 app.use('/patient-recentappointments',patientRecent) ;
 
-app.use('/patient-Settings', patientSettings) ;
+app.use('/patient-Profile', patientSettings) ;
 
 app.use('/doctor-prevop', prevOP) ;
 
